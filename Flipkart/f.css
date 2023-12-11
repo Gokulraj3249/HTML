@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: white;
+}
+.top{
+    position: fixed;
+}
+.head{
+    color: #fff;
+    width: 100%;
+    background-color: rgb(70, 70, 226);
+    height: 40px;
+    display: inline-flex;
+}
+.head h2{
+    padding-left: 80px;
+    padding-top: 7px;
+
+}
+#search{
+    padding: 10px;
+    margin-left: 40px;
+    width: 500px;
+   
+    
+}
+.head p{
+    display: inline;
+    padding-top: 30px;
+    margin-left: 50px;
+    padding-left: 2px;
+}
+.p{
+    margin-top: 7px;
+}
+.menu{
+    background-color: antiquewhite;
+    width: 100%;
+    height: 50px;
+    color: black;
+    padding-left: 50px;
+    
+
+    display: inline-flex;
+}
+.menu div{
+    display: inline-flex;
+}
+.menu select{
+    margin-left: 30px;
+    margin-top: 10px;
+    height: 25px;
+
+}
+.menu p{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.contain{
+    width: 100%;
+    /* position: relative; */
+    display: flex;
+}
+
+.contain .left{
+    height: 700px;
+    background-color: blue;
+    min-width: 200px;
+    width: 30%;
+
+}
+.contain .right{
+    height: 700px;
+    background-color: brown;
+    min-width: 500px;
+    width: 100%;
+}

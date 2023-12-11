@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: aqua;
+}
+.head{
+    width: 100%;
+    background-color: white;
+    height: 50px;
+    padding-top: 10px;
+    display: inline-flex;
+}
+.body{
+    position: relative;
+}
+.left{
+    position: absolute;
+    background-color: azure;
+    width: 25%;
+    height: 576px;
+}
+.mid{
+    position: absolute;
+    background-color: white;
+    width: 50%;
+    height: 576px;
+    top: 0px;
+    left: 25%;
+}
+.right{
+    position: absolute;
+    background-color:azure;
+    width: 25%;
+    height: 576px;
+    top: 0px;
+    right:0px ;
+}
+.head img{
+    width: 30px;
+    height: 30px;
+}
+.search{
+    background-color:white;
+    width: 250px;
+    height: 25px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 20px;
+    border-radius: 6px;
+    border:aquamarine 0.9px solid;
+}
+.logo{
+    display: inline-flex;
+}
+.logo p{
+    padding-left: 80px;
+    padding-top: 8px;
+}
