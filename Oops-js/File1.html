@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<script>
+    function User(name,age,gender) {
+        this.name=name;
+        this.age=age;
+        this.gender=gender;
+
+        this.getName=function(){
+            return `${this.name} ${this.age}/${this.gender}`
+        }
+    }
+
+    let user1 =new User("Alex",1,"m")
+    let user2 =new User("Jenny",2,"f")
+    let user3 =new User("Lucifer",12,"m")
+
+    console.log("**********user1**************")
+    console.log(user1.getName());
+    console.log(user1.name);
+
+    
+    console.log("**********user2**************")
+    console.log(user2.getName());
+    console.log(user2.name);
+
+    
+    console.log("**********user3**************")
+    console.log(user3.getName());
+    console.log(user3.name);
+
+
+</script>
+<body>
+    
+</body>
+</html>

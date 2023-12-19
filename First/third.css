@@ -1,0 +1,8 @@
+.ui{
+    text-align: center;
+}
+article:hover{
+    color: lime;
+    background-color: black;
+    text-decoration: double;
+}

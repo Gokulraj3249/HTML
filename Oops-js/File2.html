@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function submit() {
+            let name=document.signup.name.value;
+            let password=document.signup.password.value;
+            let retypepassword=document.signup.retypepassword.value;
+
+            if(name && name.lenght !=0 && password && password.lenght<6 && retypepassword && retypepassword==password){
+                alert("success");
+                return true;
+            }
+            else if(!name || !password ||!retypepassword){
+                alert("Please fill the form");
+                return false;
+            }
+            else if(name.lenght==0){
+                alert("Please enter name");
+                return false;
+            }
+            else if(password.lenght <6){
+                alert("Please enter valid password");
+                return false;
+            }
+            else if(retypepassword!=password){
+                alert("password mis-match");
+                return false;
+            }
+            else{
+                alert("please fill the form");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="signup" method="post" action="File1.html" onsubmit="return submit()">
+    Name:<input type="text" name="name" placeholder="Name"/>
+    Password: <input type="password" name="password" placeholder="Password"/>
+    Re-type password: <input type="password" name="retypepassword" placeholder="Re-type password"/>
+    <input type="submit" value="Register">
+    
+    </form>
+    
+</body>
+</html>

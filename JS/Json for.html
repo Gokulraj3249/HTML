@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <script>
+            let sampleJson = {"data":[{"name":"Ram","age":"23","gender":"male","phone":["1234567890","123498651"]},{"name":"Ranga","age":"23","gender":"male","phone":["1234567890","123498651"]},{"name":"Alex","age":"23","gender":"male","phone":["1234567890"]},{"name":"Lucifer","age":"23","gender":"male","phone":["123498651"]}]};
+            for (let index = 0; index < sampleJson.data.length; index++) {
+                const element = sampleJson.data[index];
+                alert("name: "+element.name+"  Phone: "+element.phone.join(" , ") );
+                  
+                for(let j = 0 ;j<element.phone.length;j++){
+                    const element1 = element.phone[j];
+                }
+            }
+    </script>
+        
+</head>
+<body>
+    
+    
+</body>
+</html>
