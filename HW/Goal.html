@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Goal.css">
+    <script>
+        function content(){
+            let goal={"data":[{"title":"GOAL PROGRESS","data":[{"name":"john","role":"project lead","profile":"https://bootdey.com/img/Content/avatar/avatar1.png","per":"70%"},{"name":"raja","role":" sales","profile":"https://bootdey.com/img/Content/avatar/avatar1.png","per":"91%"},{"name":"lucifer","role":"support","profile":"https://bootdey.com/img/Content/avatar/avatar1.png","per":"40%"},{"name":"alex","role":"marketing","profile":"https://bootdey.com/img/Content/avatar/avatar1.png","per":"20%"},{"name":"steve","role":"salesman","profile":"https://bootdey.com/img/Content/avatar/avatar1.png","per":"45%"},{"name":"john","role":"project lead","profile":"https://bootdey.com/img/Content/avatar/avatar1.png","per":"10%"},{"name":"john","role":"project lead","profile":"https://bootdey.com/img/Content/avatar/avatar1.png","per":"32%"},{"name":"john","role":"project lead","profile":"https://bootdey.com/img/Content/avatar/avatar1.png","per":"49%"},{"name":"john","role":"project lead","profile":"https://bootdey.com/img/Content/avatar/avatar1.png","per":"81%"}]}]}
+
+            let htmldata=""
+            goal.data.forEach((user,index) => {
+                htmldata=`${htmldata} <div class="panel">
+                <header class="panel-heading">
+                    ${user.title}
+                    <span class="tools pull-right">
+                        <a href="#" class="fa fa-chevron-down"></a>
+                        <a href="#" class="fa fa-times"></a>
+                    </span>
+                </header>
+                <div class="panel-body">
+                    <ul class="goal-progress">`
+            user.data.forEach((col,colIndex) => {
+                htmldata=`${htmldata} 
+                        <li>
+                            <div class="prog-avatar">
+                                <img src="${col.profile}" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="title">
+                                    <a href="#">${col.name}</a> - ${col.role}
+                                </div>
+                                <div class="progress progress-xs">`
+                let procolor=["progress-bar-info","progress-bar-success","progress-bar-danger","progress-bar-primary","progress-bar-warning"] 
+                let reminder = colIndex % procolor.length;                   
+                htmldata=`${htmldata}<div class="progress-bar ${procolor[reminder]}" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: ${col.per}">
+                                        <span class="">${col.per}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    `
+
+                
+
+            }) 
+            htmldata=`${htmldata} </ul><div class="text-center"><a href="#">View all Goals</a></div>
+                </div>
+            </div>`               
+                
+            });
+            document.getElementById("alex").innerHTML=htmldata;
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container bootstrap snippets bootdey">
+        <div class="col-md-6" id="alex">
+        </div>
+    </div>
+    <script>
+        content();
+    </script>
+    
+</body>
+</html>

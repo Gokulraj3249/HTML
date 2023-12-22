@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script>
-        function submit() {
-            let name=document.signup.name.value;
-            let password=document.signup.password.value;
-            let retypepassword=document.signup.retypepassword.value;
 
-            if(name && name.lenght !=0 && password && password.lenght<6 && retypepassword && retypepassword==password){
-                alert("success");
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <script>
+        function formsubmit() {
+            let name = document.signup.name.value;
+            let password = document.signup.password.value;
+            let retypepassword = document.signup.retypepassword.value;
+
+            if (name && name.length !== 0 && password && password.length >= 6 && retypepassword && retypepassword === password) {
+                alert("Success");
                 return true;
-            }
-            else if(!name || !password ||!retypepassword){
+            } else if (!name || !password || !retypepassword) {
                 alert("Please fill the form");
                 return false;
-            }
-            else if(name.lenght==0){
+            } else if (name.length === 0) {
                 alert("Please enter name");
                 return false;
-            }
-            else if(password.lenght <6){
-                alert("Please enter valid password");
+            } else if (password.length < 6) {
+                alert("Please enter a valid password (at least 6 characters)");
                 return false;
-            }
-            else if(retypepassword!=password){
-                alert("password mis-match");
+            } else if (retypepassword !== password) {
+                alert("Passwords do not match");
                 return false;
-            }
-            else{
-                alert("please fill the form");
+            } else {
+                alert("Please fill the form");
                 return false;
             }
         }
     </script>
 </head>
+
 <body>
-    <form name="signup" method="post" action="File1.html" onsubmit="return submit()">
-    Name:<input type="text" name="name" placeholder="Name"/>
-    Password: <input type="password" name="password" placeholder="Password"/>
-    Re-type password: <input type="password" name="retypepassword" placeholder="Re-type password"/>
-    <input type="submit" value="Register">
-    
+    <form class="signup" name="signup" method="post" action="File2.html" onsubmit="return formsubmit()">
+        Name: <input type="text" name="name" placeholder="Name">
+        Password: <input type="password" name="password" placeholder="Password">
+        Re-type password: <input type="password" name="retypepassword" placeholder="Re-type Password">
+        <input type="submit" value="Register">
     </form>
-    
 </body>
+
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Hello</div>
+    <div class="box2">World</div>
+    <script>
+        $(".box").click(boxClick());
+
+        $(".box").click(function () {
+            alert("Box1");
+        });
+
+        $(".box2").on("click",function () {
+            alert("Box2: "+(".box").html());
+        });
+
+        function boxClick(){
+            alert("Box1")
+        }
+    </script>
+</body>
+</html>

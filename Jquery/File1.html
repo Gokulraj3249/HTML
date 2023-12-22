@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        function loadData() {
+            let json = {
+                "data": [
+                    { "name": "Alex", "age": 22, "gender": "male" },
+                    { "name": "Lucifer", "age": 2, "gender": "male" },
+                    { "name": "John", "age": 12, "gender": "male" },
+                    { "name": "Mark", "age": 20, "gender": "male" },
+                    { "name": "Jeni", "age": 50, "gender": "female" },
+                    { "name": "Raj", "age": 92, "gender": "male" },
+                    { "name": "Hema", "age": 72, "gender": "female" },
+                    { "name": "suji", "age": 50, "gender": "female" },
+                    { "name": "karthi", "age": 32, "gender": "male" },
+                    { "name": "Godfather", "age": 2, "gender": "male" },
+                    { "name": "Gokul", "age": 23, "gender": "male" }
+                ]
+            }
+
+            let innerHtml = ""
+
+            json.data.forEach(user => {
+                innerHtml = `${innerHtml}<tr>
+                    <td>${user.name}</td>
+                    <td>${user.age}</td>
+                    <td>${user.gender}</td>
+                    </tr>`
+            })
+            $("tbody").html(innerHtml);   //(innerHtml)   Using tag
+            //$("tbody").append(innerHtml);    //Using tag
+            //$(".tableBody").html=innerHtml;    //Using Class
+            // $("#test").html=innerHtml;      //Using ID
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody class="tableBody" id="test">
+            <tr>
+                <td>Gokul</td>
+                <td>23</td>
+                <td>male</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        loadData();
+    </script>
+</body>
+
+</html>
