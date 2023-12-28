@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="D23 File2.css">
+    <script>
+
+
+
+
+
+        function content() {
+            let goal = { "data": [{ "title": "GOAL PROGRESS", "data": [{ "name": "donkey", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "81%" }] }] }
+
+            let htmldata = ""
+            goal.data.forEach((user, index) => {
+                htmldata = `${htmldata} <div class="panel">
+                <header class="panel-heading">
+                    ${user.title}
+                    <span class="tools pull-right">
+                        <a href="#" class="fa fa-chevron-down"></a>
+                        <a href="#" class="fa fa-times"></a>
+                    </span>
+                </header>
+                <div class="panel-body">
+                    <ul class="goal-progress">`
+
+                htmldata = `${htmldata} ${loadData(user.data)}`
+
+                htmldata = `${htmldata} </ul><div class="text-center"><a href="#">View all Goals</a></div>
+                </div>
+            </div>`
+
+            });
+            $("#alex").html(htmldata);
+            // document.getElementById("alex").innerHTML=htmldata;
+        }
+
+        function loadData(user) {
+            let htmldata = "";
+            user.forEach((col, colIndex) => {
+                htmldata = `${htmldata} 
+                        <li>
+                            <div class="prog-avatar">
+                                <img src="${col.profile}" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="title">
+                                    <a href="#">${col.name}</a> - ${col.role}
+                                </div>
+                                <div class="progress progress-xs">`
+                let procolor = ["progress-bar-info", "progress-bar-success", "progress-bar-danger", "progress-bar-primary", "progress-bar-warning"]
+                let reminder = colIndex % procolor.length;
+                htmldata = `${htmldata}<div class="progress-bar ${procolor[reminder]}" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: ${col.per}">
+                                        <span class="">${col.per}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    `
+
+
+            })
+            return htmldata;
+
+        }
+        let page = 0;
+
+        function array() {
+            let page1 = { "data": [{ "name": "john", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "70%" }, { "name": "raja", "role": " sales", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "91%" }, { "name": "lucifer", "role": "support", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "40%" }, { "name": "alex", "role": "marketing", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "20%" }, { "name": "steve", "role": "salesman", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "45%" }, { "name": "john", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "10%" }, { "name": "john", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "32%" }, { "name": "john", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "49%" }, { "name": "john", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "81%" }] }
+            let page2 = { "data": [{ "name": "monkey", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "81%" }] }
+            let page3 = { "data": [{ "name": "raja", "role": " sales", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "91%" }, { "name": "lucifer", "role": "support", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "40%" }, { "name": "alex", "role": "marketing", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "20%" }, { "name": "steve", "role": "salesman", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "45%" }, { "name": "john", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "10%" }, { "name": "john", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "32%" }, { "name": "john", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "49%" }, { "name": "john", "role": "project lead", "profile": "https://bootdey.com/img/Content/avatar/avatar1.png", "per": "81%" }] }
+
+            currentPage = {};
+            if (page === 2) {
+                currentPage = page2;
+            }
+            else if (page === 3) {
+                currentPage = page3;
+            }
+            else if (page === 1) {
+                currentPage = page1;
+            }
+            let htmlData = loadData(currentPage.data)
+            $(".goal-progress").append(htmlData);
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <div class="btn btn-primary load_page">Load page</div>
+    <div class="container bootstrap snippets bootdey">
+        <div class="col-md-6" id="alex">
+
+        </div>
+    </div>
+    <script>
+        content();
+        $(".load_page").on("click", function () {
+            console.log("on click");
+            page = page + 1;
+            array();
+        });
+    </script>
+
+</body>
+
+</html>
