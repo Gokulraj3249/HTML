@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            class Person{
+                constructor(name,age,gender){
+                    this.name=name;
+                    this.age=age;
+                    this.gender=gender;
+                }
+            }
+            let person=new Person("ram",23,"male");
+            console.log(person.name)
+            console.log(person.age)
+            console.log(person.gender)
+
+            class Person1{
+                constructor(...perams){
+                    this.perams=perams;
+                }
+            }
+
+            let person1=new Person1("Alex",23,"male","cous","TN");
+            console.log(person1.perams)
+
+            let json1=[{"name":"Lucifer","age":32,"gender":"male"},{"name":"raja","age":33,"gender":"male"},{"name":"janu","age":49,"gender":"female"}]
+            let json2=[{"name":"Lucifer","age":32,"gender":"male"},{"name":"raja","age":33,"gender":"male"},{"name":"janu","age":49,"gender":"female"}]
+            
+            let person2=new Person1(...json1,...json2,...json1,...json2);
+            console.log(person2.perams)
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
